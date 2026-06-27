@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Proyek Baru</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-5">
+    <div class="container" style="max-width: 600px;">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="mb-4 text-primary">Tambah Proyek Portofolio</h3>
+                
+                <form action="/proyek/tambah" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Judul Proyek</label>
+                        <input type="text" name="judul" class="form-control" required placeholder="Contoh: Aplikasi E-Commerce">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Deskripsi Proyek</label>
+                        <textarea name="deskripsi" class="form-control" rows="4" required placeholder="Jelaskan teknologi yang digunakan dan fungsi aplikasi..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Link Proyek / GitHub (Opsional)</label>
+                        <input type="url" name="link" class="form-control" placeholder="https://github.com/username/project">
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success flex-grow-1">Simpan Proyek</button>
+                        <a href="/" class="btn btn-secondary">Batal</a>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

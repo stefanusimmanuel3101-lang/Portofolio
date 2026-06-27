@@ -1,0 +1,39 @@
+
+CREATE TABLE profil (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    profesi VARCHAR(100) NOT NULL,
+    bio TEXT NOT NULL,
+    gambar_url VARCHAR(255)
+);
+
+CREATE TABLE skill (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_skill VARCHAR(50) NOT NULL,
+    level VARCHAR(50) 
+);
+
+CREATE TABLE pengalaman (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    posisi VARCHAR(100) NOT NULL,
+    institusi VARCHAR(100) NOT NULL,
+    rentang_waktu VARCHAR(50) NOT NULL,
+    deskripsi TEXT NOT NULL
+);
+
+CREATE TABLE proyek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    judul VARCHAR(150) NOT NULL,
+    deskripsi TEXT NOT NULL,
+    gambar_url VARCHAR(255),
+    link_demo VARCHAR(255),
+    link_repo VARCHAR(255)
+);
+
+CREATE TABLE kontak (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    pesan TEXT NOT NULL,
+    tanggal_kirim TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

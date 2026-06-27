@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profesional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <div>
+                <a href="/edit" class="btn btn-outline-light btn-sm me-2">Edit Profil</a>
+                <a href="/proyek/tambah" class="btn btn-primary btn-sm">Tambah Proyek</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                
+                <div class="card shadow-sm mb-5">
+                    <div class="card-body text-center p-5">
+                        {% if data %}
+                            {% if data[3] %}
+                                <img src="{{ data[3] }}" alt="Foto Profil" class="rounded-circle mb-4 shadow" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #fff;">
+                            {% endif %}
+                            <h1 class="display-5 fw-bold text-primary">{{ data[0] }}</h1>
+                            <h3 class="text-secondary mb-4">{{ data[1] }}</h3>
+                            <hr class="w-25 mx-auto mb-4">
+                            <p class="lead text-muted mx-auto" style="max-width: 600px;">{{ data[2] }}</p>
+                        {% else %}
+                            <div class="alert alert-warning" role="alert">Data profil belum tersedia.</div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <h3 class="mb-4 fw-bold text-dark text-center">Proyek / Karya Saya</h3>
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+                    
+                    {% if daftar_proyek %}
+                        {% for proyek in daftar_proyek %}
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body p-4 d-flex flex-column">
+                                        <h5 class="card-title fw-bold text-primary">{{ proyek[0] }}</h5>
+                                        <p class="card-text text-muted flex-grow-1">{{ proyek[1] }}</p>
+                                        
+                                        {% if proyek[2] %}
+                                            <a href="{{ proyek[2] }}" target="_blank" class="btn btn-outline-primary btn-sm mt-3 w-100">Lihat Proyek</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="col-12 text-center">
+                            <p class="text-muted">Belum ada proyek yang ditambahkan. Gunakan menu di atas untuk menambah.</p>
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
