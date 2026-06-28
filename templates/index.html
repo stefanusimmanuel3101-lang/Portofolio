@@ -3,139 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional</title>
+    <title>Portofolio | Stefanus Immanuel</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
-<style>
-    
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
-        background-color: #090514 !important; 
-        color: #e2d9f3 !important; 
-        background-image: 
-            radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15), transparent 25%),
-            radial-gradient(circle at 85% 30%, rgba(0, 225, 255, 0.1), transparent 25%) !important;
-    }
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            background-color: #090514 !important; 
+            color: #e2d9f3 !important;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 225, 255, 0.1), transparent 25%) !important;
+            background-attachment: fixed;
+        }
 
-    
-    h1, h2, h3, h4, h5, .card-title {
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        color: #d8b4fe !important;
-        text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-    }
+        h1, h2, h3, h4, h5, .card-title {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #d8b4fe !important; 
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        }
 
-    
-    .card {
-        background: rgba(20, 12, 39, 0.6) !important;
-        border: 1px solid rgba(139, 92, 246, 0.3) !important;
-        border-radius: 12px;
-        backdrop-filter: blur(10px); 
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
+        /* Glassmorphism Card */
+        .card {
+            background: rgba(20, 12, 39, 0.6) !important;
+            border: 1px solid rgba(139, 92, 246, 0.3) !important;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
 
-    
-    .card:hover {
-        transform: translateY(-5px);
-        background: rgba(30, 18, 55, 0.8) !important;
-        border: 1px solid rgba(168, 85, 247, 0.8) !important;
-        box-shadow: 
-            0 0 20px rgba(168, 85, 247, 0.3), 
-            0 0 40px rgba(0, 225, 255, 0.1) inset; 
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 18, 55, 0.8) !important;
+            border: 1px solid rgba(168, 85, 247, 0.8) !important;
+            box-shadow: 
+                0 0 20px rgba(168, 85, 247, 0.3), 
+                0 0 40px rgba(0, 225, 255, 0.1) inset; 
+        }
 
-    
-    .card-text {
-        color: #a78bfa !important;
-    }
+        .card-text {
+            color: #a78bfa !important;
+        }
 
-    .card-body {
-        padding: 2rem !important;
-    }
+        .card-body {
+            padding: 2rem !important;
+        }
 
-    
-    .btn-primary {
-        background: linear-gradient(45deg, #7c3aed, #c026d3);
-        border: none;
-        box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
-        color: white;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
+        .btn-primary {
+            background: linear-gradient(45deg, #7c3aed, #c026d3) !important;
+            border: none !important;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.5) !important;
+            color: white !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-    .btn-primary:hover {
-        background: linear-gradient(45deg, #6d28d9, #a21caf);
-        box-shadow: 0 0 20px rgba(192, 38, 211, 0.7);
-        transform: scale(1.05);
-    }
-</style>
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #6d28d9, #a21caf) !important;
+            box-shadow: 0 0 20px rgba(192, 38, 211, 0.7) !important;
+            transform: scale(1.05);
+        }
+
+        /* Profil Image Styling */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid rgba(139, 92, 246, 0.5);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
 
-    <nav class="navbar navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">My Portofolio</a>
-            <div>
-                <a href="/edit" class="btn btn-outline-light btn-sm me-2">Edit Profil</a>
-                <a href="/proyek/tambah" class="btn btn-primary btn-sm">Tambah Project</a>
-            </div>
-        </div>
-    </nav>
+    <div class="container text-center mt-5 mb-5 pt-5">
+        <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile" class="profile-img" onerror="this.style.display='none'">
+        <h1 class="display-4">Stefanus Immanuel</h1>
+        <h4 style="color: #a78bfa;">Information Systems | Strategic Operations</h4>
+        <p class="mt-4 mx-auto" style="max-width: 700px; font-size: 1.1rem; color: #e2d9f3;">
+            Menyelesaikan tantangan operasional melalui arsitektur sistem informasi, manajemen basis data, dan eksekusi strategis. Berpengalaman dalam memimpin program berskala besar dan merancang solusi digital untuk kebutuhan bisnis komersial.
+        </p>
+    </div>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                
-                <div class="card shadow-sm mb-5">
-                    <div class="card-body text-center p-5">
-                        {% if data %}
-                            {% if data[3] %}
-                                <img src="{{ data[3] }}" alt="Foto Profil" class="rounded-circle mb-4 shadow" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #fff;">
-                            {% endif %}
-                            <h1 class="display-5 fw-bold text-primary">{{ data[0] }}</h1>
-                            <h3 class="text-secondary mb-4">{{ data[1] }}</h3>
-                            <hr class="w-25 mx-auto mb-4">
-                            <p class="lead text-muted mx-auto" style="max-width: 600px;">{{ data[2] }}</p>
-                        {% else %}
-                            <div class="alert alert-warning" role="alert">Data profil belum tersedia.</div>
+    <hr style="border-color: rgba(139, 92, 246, 0.3); max-width: 80%; margin: 0 auto;">
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-5">Arsitektur & Portofolio</h2>
+        <div class="row">
+            {% for proyek in proyeks %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ proyek.judul }}</h3>
+                        <p class="card-text">{{ proyek.deskripsi }}</p>
+                        {% if proyek.link %}
+                        <a href="{{ proyek.link }}" class="btn btn-primary mt-3" target="_blank">Lihat Dokumentasi</a>
                         {% endif %}
                     </div>
                 </div>
+            </div>
+            {% endfor %}
+            
+            {% if not proyeks %}
+            <div class="col-12 text-center">
+                <p style="color: #a78bfa;">Sistem database sedang aktif. Data proyek belum diinput melalui panel Admin.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
 
-                <h3 class="mb-4 fw-bold text-dark text-center">Proyek</h3>
-                <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
-                    
-                    {% if daftar_proyek %}
-                        {% for proyek in daftar_proyek %}
-                            <div class="col">
-                                <div class="card h-100 shadow-sm border-0">
-                                    <div class="card-body p-4 d-flex flex-column">
-                                        <h5 class="card-title fw-bold text-primary">{{ proyek[0] }}</h5>
-                                        <p class="card-text text-muted flex-grow-1">{{ proyek[1] }}</p>
-                                        
-                                        {% if proyek[2] %}
-                                            <a href="{{ proyek[2] }}" target="_blank" class="btn btn-outline-primary btn-sm mt-3 w-100">Lihat Proyek</a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class="col-12 text-center">
-                            <p class="text-muted">Belum ada proyek yang ditambahkan. Gunakan menu di atas untuk menambah.</p>
-                        </div>
-                    {% endif %}
-
+    <div class="container mt-5 pt-5">
+        <h2 class="mb-5 text-center">Tech Stack & Kapabilitas</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Database & Analitik</h4>
+                        <p class="card-text">Oracle DB, SQL, TiDB, Pemodelan Statistik</p>
+                    </div>
                 </div>
-
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Sistem & Operasional</h4>
+                        <p class="card-text">Analisis Kebutuhan Bisnis, Manajemen Proyek, IT Strategy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Kreatif & Frontend</h4>
+                        <p class="card-text">AI Image Generation, Prompt Engineering, HTML/CSS/Flask</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="container mt-5 mb-5 pb-5 text-center">
+        <h2 class="mb-4">Inisiasi Komunikasi</h2>
+        <p style="color: #a78bfa;">Mari diskusikan arsitektur sistem atau peluang operasional berikutnya.</p>
+        <a href="mailto:email.lo.disini@gmail.com" class="btn btn-primary px-4 py-2 mt-3">Email Gw</a>
+        <a href="https://linkedin.com/in/username-lo" target="_blank" class="btn btn-primary px-4 py-2 mt-3 ms-2">LinkedIn</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
