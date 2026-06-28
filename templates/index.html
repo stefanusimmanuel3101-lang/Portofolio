@@ -11,36 +11,67 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-   
+    /* Reset & Tipografi */
     body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #f8f9fa; /* Latar belakang abu-abu terang yang bersih */
+        background-color: #090514; /* Hitam pekat dengan undertone ungu */
+        color: #e2d9f3; /* Putih redup agar mata tidak sakit */
+        background-image: 
+            radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15), transparent 25%),
+            radial-gradient(circle at 85% 30%, rgba(0, 225, 255, 0.1), transparent 25%);
     }
 
-    
+    /* Modifikasi Judul dengan Efek Neon */
     h1, h2, h3, h4, h5, .card-title {
         font-weight: 800;
         letter-spacing: -0.5px;
-        color: #111827;
+        color: #d8b4fe; /* Ungu neon terang */
+        text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
     }
 
-
+    /* Rombak Bootstrap Card menjadi Kaca Cyberpunk */
     .card {
-        border: none !important;
+        background: rgba(20, 12, 39, 0.6) !important;
+        border: 1px solid rgba(139, 92, 246, 0.3) !important;
         border-radius: 12px;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        backdrop-filter: blur(10px); /* Efek kaca (glassmorphism) */
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
-    
+    /* Interaksi Hover: Neon Aktif */
     .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        background: rgba(30, 18, 55, 0.8) !important;
+        border: 1px solid rgba(168, 85, 247, 0.8) !important;
+        box-shadow: 
+            0 0 20px rgba(168, 85, 247, 0.3), 
+            0 0 40px rgba(0, 225, 255, 0.1) inset; /* Cyan glow di dalam */
     }
 
-    
+    /* Teks minor di dalam card */
+    .card-text {
+        color: #a78bfa !important;
+    }
+
     .card-body {
         padding: 2rem !important;
+    }
+
+    /* Kustomisasi Tombol (Jika ada) */
+    .btn-primary {
+        background: linear-gradient(45deg, #7c3aed, #c026d3);
+        border: none;
+        box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+        color: white;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(45deg, #6d28d9, #a21caf);
+        box-shadow: 0 0 20px rgba(192, 38, 211, 0.7);
+        transform: scale(1.05);
     }
 </style>
 </head>
@@ -48,10 +79,10 @@
 
     <nav class="navbar navbar-dark bg-dark mb-4">
         <div class="container">
-            <a class="navbar-brand" href="#">My Portfolio</a>
+            <a class="navbar-brand" href="#">My Portofolio</a>
             <div>
                 <a href="/edit" class="btn btn-outline-light btn-sm me-2">Edit Profil</a>
-                <a href="/proyek/tambah" class="btn btn-primary btn-sm">Tambah Proyek</a>
+                <a href="/proyek/tambah" class="btn btn-primary btn-sm">Tambah Project</a>
             </div>
         </div>
     </nav>
@@ -76,7 +107,7 @@
                     </div>
                 </div>
 
-                <h3 class="mb-4 fw-bold text-dark text-center">Proyek</h3>
+                <h3 class="mb-4 fw-bold text-dark text-center">Project</h3>
                 <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
                     
                     {% if daftar_proyek %}
@@ -84,11 +115,11 @@
                             <div class="col">
                                 <div class="card h-100 shadow-sm border-0">
                                     <div class="card-body p-4 d-flex flex-column">
-                                        <h5 class="card-title fw-bold text-primary">{{ proyek[0] }}</h5>
-                                        <p class="card-text text-muted flex-grow-1">{{ proyek[1] }}</p>
+                                        <h5 class="card-title fw-bold text-primary">{{ project[0] }}</h5>
+                                        <p class="card-text text-muted flex-grow-1">{{ project[1] }}</p>
                                         
-                                        {% if proyek[2] %}
-                                            <a href="{{ proyek[2] }}" target="_blank" class="btn btn-outline-primary btn-sm mt-3 w-100">Lihat Proyek</a>
+                                        {% if project[2] %}
+                                            <a href="{{ project[2] }}" target="_blank" class="btn btn-outline-primary btn-sm mt-3 w-100">Lihat Proyek</a>
                                         {% endif %}
                                     </div>
                                 </div>
