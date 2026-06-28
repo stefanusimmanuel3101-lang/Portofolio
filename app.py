@@ -75,7 +75,7 @@ def logout():
     session.pop('admin_logged_in', None)
     return redirect(url_for('index'))
     
-@app.route('/edit', methods=['GET', 'POST'])
+@app.route('/edit/profil', methods=['GET', 'POST'])
 def edit_profil():
     # Pasang dua baris ini di baris pertama dalam fungsi edit & tambah
     if not session.get('admin_logged_in'):
