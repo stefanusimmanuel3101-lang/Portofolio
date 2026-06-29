@@ -36,24 +36,33 @@ def get_db_connection():
 def index():
     try:
         conn = get_db_connection()
-        cursor = conn.cursor()
+        # WAJIB gunakan DictCursor agar data yang ditarik berbentuk kamus (dictionary)
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
         
-        # 1. Ambil data profil (1 baris)
-        cursor.execute('SELECT nama, profesi, bio, foto_url FROM profil LIMIT 1')
-        profil_data = cursor.fetchone()
+        # 1. Eksekusi penarikan data Profil
+        cursor.execute("SELECT * FROM profil LIMIT 1")
+        data_profil = cursor.fetchone()
         
-        # 2. Ambil semua data proyek (bisa banyak baris)
-        cursor.execute('SELECT judul, deskripsi, link FROM proyek')
-        proyek_data = cursor.fetchall()
+        # Jaring pengaman (Fail-safe): Jika tabel profil kosong, sistem tidak akan crash
+        if not data_profil:
+            data_profil = {
+                'nama': 'Admin', 
+                'profesi': 'Sistem Informasi', 
+                'bio': 'Data profil belum diinput ke database.'
+            }
+
+        # 2. Eksekusi penarikan data Proyek (Asumsi kode lama lo)
+        cursor.execute("SELECT * FROM proyek")
+        data_proyek = cursor.fetchall()
         
         cursor.close()
         conn.close()
         
-        # Melempar kedua data tersebut ke index.html
-        return render_template('index.html', data=profil_data, daftar_proyek=proyek_data)
+        # PENTING: Oper kedua data tersebut ke HTML
+        return render_template('index.html', profil=data_profil, proyeks=data_proyek)
         
     except Exception as e:
-        return f"Gagal koneksi ke database: {str(e)}"
+        return f"Kesalahan Sistem: {e}"
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
