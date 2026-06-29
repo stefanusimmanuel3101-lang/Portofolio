@@ -4,6 +4,7 @@ from flask import Flask,render_template,request,redirect,url_for,session
 from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
+import resend 
 
 # 1. Inisialisasi
 load_dotenv()
@@ -11,6 +12,7 @@ cloudinary.config(
     cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
     api_key=os.getenv('CLOUDINARY_API_KEY'),
     api_secret=os.getenv('CLOUDINARY_API_SECRET'),
+    resend_api_key=os.getenv('RESEND_API_KEY'),
     secure=True
 )
 app = Flask(__name__)
@@ -174,6 +176,24 @@ def hapus_proyek(id):
         return redirect(url_for('index'))
     except Exception as e:
         return f"Kegagalan sistem saat menghapus: {e}"
+    
+@app.route('/kirim-pesan', methods=['POST'])
+def kirim_pesan():
+    nama = request.form.get('nama')
+    email_pengirim = request.form.get('email')
+    pesan = request.form.get('pesan')
+    
+    try:
+        # Eksekusi API Resend
+        resend.Emails.send({
+            "from": "onboarding@resend.dev", # Resend mewajibkan email pengirim default mereka untuk tier gratis
+            "to": "email.asli.lo@gmail.com", # Email tujuan lo
+            "subject": f"Pesan Portofolio dari {nama}",
+            "html": f"<p><strong>Pengirim:</strong> {nama} ({email_pengirim})</p><p>{pesan}</p>"
+        })
+        return "Pesan berhasil dikirim ke satelit Resend. Silakan cek inbox lo."
+    except Exception as e:
+        return f"Gagal mengirim pesan: {e}"
     
 # 4. Eksekusi
 if __name__ == '__main__':
