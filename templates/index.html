@@ -173,19 +173,33 @@
 
     <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h2 class="text-center">Hubungi Saya</h2>
-            <form action="/kirim-pesan" method="POST">
-                <input type="text" name="nama" class="form-control mb-3" placeholder="Nama Lo" required>
-                <input type="email" name="email" class="form-control mb-3" placeholder="Email Lo" required>
-                <textarea name="pesan" class="form-control mb-3" rows="4" placeholder="Pesan..." required></textarea>
+        <div class="col-md-8 col-lg-6">
+            <form action="/kirim-pesan" method="POST" class="p-4 border rounded shadow-sm bg-dark text-light">
+                <h3 class="text-center mb-3">Hubungi Saya</h3>
+                <div class="mb-3">
+                    <label class="form-label">Nama Anda</label>
+                    <input type="text" name="nama" class="form-control" placeholder="Nama pengirim" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Anda</label>
+                    <input type="email" name="email" class="form-control" placeholder="Email pengirim" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Pesan</label>
+                    <textarea name="pesan" class="form-control" rows="4" placeholder="Tulis pesan..." required></textarea>
+                </div>
                 <button type="submit" class="btn btn-primary w-100">Kirim Pesan via Sistem</button>
             </form>
+
+            <div class="text-center mt-4">
+                <p>Atau intip karya saya di:</p>
+                <a href="https://instagram.com/fnuss_" target="_blank" class="btn btn-outline-light">
+                    Instagram @fnuss_
+                </a>
+            </div>
         </div>
     </div>
 </div>
-        <a href="https://instagram.com/fnuss_" target="_blank" class="btn btn-primary px-4 py-2 mt-3 ms-2">fnuss_</a>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
