@@ -157,7 +157,24 @@ def tambah_proyek():
         conn.close()
         
         return redirect(url_for('index'))
+@app.route('/proyek/hapus/<int:id>', methods=['POST'])
+def hapus_proyek(id):
 
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        # Eksekusi Pemusnahan Data
+        cursor.execute("DELETE FROM proyek WHERE id = %s", (id,))
+        conn.commit() # Nyawa dari eksekusi database
+        
+        cursor.close()
+        conn.close()
+        
+        return redirect(url_for('index'))
+    except Exception as e:
+        return f"Kegagalan sistem saat menghapus: {e}"
+    
 # 4. Eksekusi
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
