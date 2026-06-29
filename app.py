@@ -192,27 +192,7 @@ def kirim_pesan():
             "html": f"<p><strong>Pengirim:</strong> {nama} ({email_pengirim})</p><p>{pesan}</p>"
         })
         return "Pesan berhasil dikirim ke satelit Resend. Silakan cek inbox lo."
-    except Exception as e:
-        return f"Gagal mengirim pesan: {e}"
-@app.route('/kirim-pesan', methods=['POST'])
-def kirim_pesan():
-    nama = request.form.get('nama')
-    email_pengirim = request.form.get('email')
-    pesan = request.form.get('pesan')
-    
-    
-    params = {
-        "from": "onboarding@resend.dev", 
-        "to": "stefanus.immanuel3101@gmail.com", 
-        "subject": f"Pesan dari {nama} via Portofolio",
-        "html": f"<p><strong>Nama:</strong> {nama}</p><p><strong>Email Pengirim:</strong> {email_pengirim}</p><p><strong>Pesan:</strong> {pesan}</p>",
-        "reply_to": email_pengirim 
-    }
-    
-    # Kirim via Resend
-    resend.Emails.send(params)
-    
-    return "Pesan terkirim!"
+    except Exception as e:            return f"Gagal mengirim pesan: {e}"
     
 # 4. Eksekusi
 if __name__ == '__main__':
