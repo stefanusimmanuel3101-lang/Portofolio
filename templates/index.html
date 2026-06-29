@@ -99,12 +99,16 @@
 </nav>
 
     <div class="container text-center mt-5 mb-5 pt-5">
-        <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile" class="profile-img" onerror="this.style.display='none'">
-        <h1 class="display-4">Stefanus Immanuel</h1>
-        <h4 style="color: #a78bfa;">Information Systems</h4>
-        <p class="mt-4 mx-auto" style="max-width: 700px; font-size: 1.1rem; color: #e2d9f3;">
-            Hi, I'm Stefanus Immanuel, an Information Systems student who enjoys learning how technology can solve real-world problems. I'm interested in digital products, business processes, and continuously developing my skills through projects and new experiences.
-        </p>
+        {% if profil.foto_url %}
+            <img src="{{ profil.foto_url }}" alt="Profile" class="profile-img" onerror="this.style.display='none'">
+        {% else %}
+            <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile" class="profile-img" onerror="this.style.display='none'">
+        {% endif %}
+        <h1 class="display-4">{{ profil.nama }}</h1>
+<h4 style="color: #a78bfa;">{{ profil.profesi }}</h4>
+<p class="mt-4 mx-auto" style="max-width: 700px; font-size: 1.1rem; color: #e2d9f3;">
+    {{ profil.bio }}
+</p>
     </div>
 
     <hr style="border-color: rgba(139, 92, 246, 0.3); max-width: 80%; margin: 0 auto;">
