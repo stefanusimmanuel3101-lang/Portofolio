@@ -124,10 +124,10 @@
                         <p class="card-text">{{ proyek.deskripsi }}</p>
                         {% if proyek.link %}
                         <a href="{{ proyek.link }}" class="btn btn-primary mt-3" target="_blank">Lihat Dokumentasi</a>
+                        {% endif %}
                         <form action="{{ url_for('hapus_proyek', id=proyek.id) }}" method="POST" class="d-inline" onsubmit="return confirm('Tindakan ini ireversibel. Yakin ingin menghapus arsitektur ini dari database?');">
     <button type="submit" class="btn btn-danger btn-sm mt-3 ms-2" style="background: rgba(220, 53, 69, 0.8); border: 1px solid #ff4d4d; box-shadow: 0 0 10px rgba(220, 53, 69, 0.4);">🗑️ Hapus</button>
 </form>
-                        {% endif %}
                     </div>
                 </div>
             </div>
